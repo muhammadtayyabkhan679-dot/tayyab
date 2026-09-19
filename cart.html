@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyTable - Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">
+        Tasty<span>Table</span>
+    </a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#recipes">Recipes</a>
+        <a href="cart.html" class="active">
+            Order <span class="cart-count">0</span>
+        </a>
+    </nav>
+</header>
+
+<main class="page-shell">
+    <div class="cart-heading">
+        <div>
+            <p class="eyebrow">YOUR ORDER</p>
+            <h1>Cart</h1>
+        </div>
+
+        <div class="cart-header-totals">
+            <span>Total Items: <strong id="cartTotal">0</strong></span>
+            <span>Total Price: <strong id="cartHeaderTotal">$0.00</strong></span>
+        </div>
+    </div>
+
+    <div class="cart-layout">
+        <section id="cartItems" class="cart-list"></section>
+
+        <aside id="cartSummary" class="cart-summary-card" style="display: none;">
+            <h2>Order Summary</h2>
+            <div class="summary-line">
+                <span>Items Subtotal</span>
+                <span id="summarySubtotal">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <span>Estimated Delivery</span>
+                <span class="delivery-badge">FREE</span>
+            </div>
+            <hr class="summary-divider">
+            <div class="summary-line total-line">
+                <strong>Total Amount</strong>
+                <strong id="cartTotalPrice">$0.00</strong>
+            </div>
+            <button id="checkoutBtn" class="btn primary checkout-btn">
+                Proceed to Checkout 💳
+            </button>
+        </aside>
+    </div>
+</main>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+        <button id="closeModalBtn" class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-header">
+            <p class="eyebrow">FINAL STEP</p>
+            <h2>Checkout & Order</h2>
+            <p class="modal-sub">Please enter your delivery details to confirm your order.</p>
+        </div>
+
+        <form id="checkoutForm" class="checkout-form">
+            <div class="form-group">
+                <label for="custName">Full Name</label>
+                <input type="text" id="custName" placeholder="e.g. Ali Khan" required>
+            </div>
+
+            <div class="form-group">
+                <label for="custPhone">Phone Number</label>
+                <input type="tel" id="custPhone" placeholder="e.g. 0300 1234567" required>
+            </div>
+
+            <div class="form-group">
+                <label for="custAddress">Delivery Address</label>
+                <textarea id="custAddress" rows="3" placeholder="Enter your full street address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="payMethod">Payment Method</label>
+                <select id="payMethod">
+                    <option value="cod">Cash on Delivery (COD)</option>
+                    <option value="card">Credit / Debit Card</option>
+                    <option value="online">Online Banking</option>
+                </select>
+            </div>
+
+            <div class="modal-total-box">
+                <span>Grand Total:</span>
+                <span id="modalTotalPrice">$0.00</span>
+            </div>
+
+            <button type="submit" class="btn primary submit-order-btn">
+                Confirm & Place Order
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ORDER SUCCESS MODAL -->
+<div id="orderSuccessModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card success-card">
+        <div class="success-icon">🎉</div>
+        <h2>Order Placed Successfully!</h2>
+        <p id="successOrderId" class="order-id">Order #TT-10492</p>
+        <p class="success-msg">Thank you for ordering with TastyTable. Your delicious meal is being prepared and will be delivered soon!</p>
+        <a href="index.html#recipes" class="btn primary">Order More Recipes</a>
+    </div>
+</div>
+
+<footer>
+    © 2026 TastyTable
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>

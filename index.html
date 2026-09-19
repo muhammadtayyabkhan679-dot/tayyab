@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyTable - Recipes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">
+        Tasty<span>Table</span>
+    </a>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="#recipes">Recipes</a>
+        <a href="cart.html">
+            Order <span class="cart-count">0</span>
+        </a>
+    </nav>
+</header>
+
+
+<!-- FOOD BANNER -->
+<section class="food-banner" aria-label="TastyTable food banner">
+    <img src="assets/food-banner.png" alt="TastyTable pizza and burger food banner">
+</section>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">FRESH • SIMPLE • DELICIOUS</p>
+
+        <h1>
+            Find your next
+            <span>favorite recipe.</span>
+        </h1>
+
+        <p>
+            Explore delicious recipes, search your favorites,
+            filter by tags and create your order.
+        </p>
+
+        <a href="#recipes" class="btn primary">
+            Explore Recipes
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+            src="https://cdn.dummyjson.com/recipe-images/1.webp"
+            alt="Recipe"
+        >
+
+        <div class="hero-card-text">
+            <strong>Today's Pick</strong>
+            <span>Delicious Recipe</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RECIPES -->
+<section class="recipes-section" id="recipes">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">OUR MENU</p>
+            <h2>Discover Recipes</h2>
+        </div>
+
+        <div class="toolbar">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search recipes..."
+            >
+
+            <select id="sortSelect">
+
+                <option value="">
+                    Sort: Default
+                </option>
+
+                <option value="name-asc">
+                    Name A → Z
+                </option>
+
+                <option value="name-desc">
+                    Name Z → A
+                </option>
+
+                <option value="rating-desc">
+                    Rating High → Low
+                </option>
+
+                <option value="rating-asc">
+                    Rating Low → High
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- TAG FILTER -->
+    <div class="filter-row">
+
+        <strong>Tags:</strong>
+
+        <div id="tagFilters" class="tags"></div>
+
+        <button id="clearFilters" class="clear-btn">
+            Clear
+        </button>
+
+    </div>
+
+
+    <div id="loading" class="loading">
+        Loading recipes...
+    </div>
+
+
+    <!-- RECIPE CARDS -->
+    <div id="recipeGrid" class="recipe-grid"></div>
+
+
+    <!-- PAGINATION -->
+    <div id="pagination" class="pagination"></div>
+
+</section>
+
+
+<footer>
+    © 2026 TastyTable
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
